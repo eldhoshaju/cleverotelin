@@ -25,7 +25,7 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="mb-6 rounded-full border border-[#5B5CF6]/20 bg-[#5B5CF6]/5 px-4 py-1.5 text-sm font-medium text-[#5B5CF6]"
         >
-          Trusted by 2,000+ businesses across India
+          Trusted by 4,000+ businesses across India
         </motion.div>
 
         {/* Heading */}

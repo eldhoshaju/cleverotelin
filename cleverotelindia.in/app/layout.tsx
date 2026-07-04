@@ -11,7 +11,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "CleverOTel India - Transform Your Business Communication",
   description:
-    "Enterprise-grade cloud telephony, AI-powered call centers, and seamless CRM integrations. Trusted by 2,000+ businesses across India.",
+    "Enterprise-grade cloud telephony, AI-powered call centers, and seamless CRM integrations. Trusted by 4,000+ businesses across India.",
   keywords: [
     "cloud telephony",
     "call center",
