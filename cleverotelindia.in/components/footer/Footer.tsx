@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Heart } from "lucide-react";
 import { FOOTER_COLUMNS, BOTTOM_LINKS } from "@/constants/footer";
@@ -32,12 +33,13 @@ export default function Footer() {
           <div className="col-span-2 sm:col-span-3 lg:col-span-1">
             {/* Logo */}
             <a href="/" className="mb-4 inline-block">
-              <span className="text-xl font-bold tracking-tight text-white">
-                clever
-                <span className="bg-gradient-to-r from-[#7C3AED] to-[#EC4899] bg-clip-text text-transparent">
-                  otel
-                </span>
-              </span>
+              <Image
+                src="/cleverotel_logo_new.svg"
+                alt="CleveroTel Logo"
+                width={140}
+                height={35}
+                className="h-7 w-auto brightness-0 invert"
+              />
             </a>
             <p className="mb-5 max-w-xs text-xs leading-relaxed text-gray-500">
               Enterprise-grade cloud communication platform. AI-powered call

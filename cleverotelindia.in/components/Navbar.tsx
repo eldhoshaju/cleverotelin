@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Phone, Globe, ChevronDown, Menu, X } from "lucide-react";
 import { useScrolled } from "@/hooks/useScrolled";
@@ -26,12 +27,14 @@ export default function Navbar() {
       <div className="mx-auto flex h-full max-w-7xl items-center justify-between px-6">
         {/* Logo */}
         <a href="/" className="flex items-center gap-1.5">
-          <span className="text-2xl font-bold tracking-tight text-[#111827]">
-            clever
-            <span className="bg-gradient-to-r from-[#5B5CF6] to-[#D946EF] bg-clip-text text-transparent">
-              otel
-            </span>
-          </span>
+          <Image
+            src="/cleverotel_logo_new.svg"
+            alt="CleveroTel Logo"
+            width={160}
+            height={40}
+            priority
+            className="h-8 w-auto sm:h-9"
+          />
         </a>
 
         {/* Desktop Navigation */}
