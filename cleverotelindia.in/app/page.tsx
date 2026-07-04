@@ -6,6 +6,13 @@ import MobileSection from "@/components/mobile/MobileSection";
 import AnalyticsSection from "@/components/analytics/AnalyticsSection";
 import AIRecordingSection from "@/components/recording/AIRecordingSection";
 import CommunicationPlatform from "@/components/platform/CommunicationPlatform";
+import IndustrySection from "@/components/industries/IndustrySection";
+import GrowthSection from "@/components/growth/GrowthSection";
+import CallFlowBuilder from "@/components/callflow/CallFlowBuilder";
+import IntegrationSection from "@/components/integrations/IntegrationSection";
+import ContactSection from "@/components/contact/ContactSection";
+import Footer from "@/components/footer/Footer";
+import BackToTop from "@/components/BackToTop";
 
 export default function Home() {
   return (
@@ -19,7 +26,14 @@ export default function Home() {
         <AnalyticsSection />
         <AIRecordingSection />
         <CommunicationPlatform />
+        <IndustrySection />
+        <GrowthSection />
+        <CallFlowBuilder />
+        <IntegrationSection />
+        <ContactSection />
       </main>
+      <Footer />
+      <BackToTop />
     </>
   );
 }
