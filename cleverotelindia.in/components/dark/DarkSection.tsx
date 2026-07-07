@@ -3,7 +3,6 @@
 import AnimatedBackground from "./AnimatedBackground";
 import FeaturesSection from "./FeaturesSection";
 import WhyChooseUs from "./WhyChooseUs";
-import OmnichannelPlatform from "./OmnichannelPlatform";
 
 export default function DarkSection() {
   return (
@@ -18,7 +17,6 @@ export default function DarkSection() {
       <div className="relative z-10 mx-auto max-w-[1280px]">
         <FeaturesSection />
         <WhyChooseUs />
-        <OmnichannelPlatform />
       </div>
     </section>
   );

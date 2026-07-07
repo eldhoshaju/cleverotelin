@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import SolutionSection from "@/components/SolutionSection";
 import DarkSection from "@/components/dark/DarkSection";
+import OmnichannelPlatform from "@/components/dark/OmnichannelPlatform";
 import MobileSection from "@/components/mobile/MobileSection";
 import AnalyticsSection from "@/components/analytics/AnalyticsSection";
 import AIRecordingSection from "@/components/recording/AIRecordingSection";
@@ -22,6 +23,7 @@ export default function Home() {
         <Hero />
         <SolutionSection />
         <DarkSection />
+        <OmnichannelPlatform />
         <MobileSection />
         <AnalyticsSection />
         <AIRecordingSection />

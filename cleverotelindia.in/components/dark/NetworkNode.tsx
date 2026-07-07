@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import type { LucideIcon } from "lucide-react";
-import { cn } from "@/lib/utils";
 
 export interface NetworkNodeProps {
   icon: LucideIcon;
@@ -19,15 +18,14 @@ export default function NetworkNode({
   x,
   y,
   delay,
-  accent,
 }: NetworkNodeProps) {
   return (
     <motion.div
       className="absolute flex flex-col items-center gap-1.5"
       style={{ left: `${x}%`, top: `${y}%`, transform: "translate(-50%, -50%)" }}
-      initial={{ opacity: 0, scale: 0.5 }}
+      initial={{ opacity: 0, scale: 0.6 }}
       whileInView={{ opacity: 1, scale: 1 }}
-      viewport={{ once: true, margin: "-50px" }}
+      viewport={{ once: true, margin: "-40px" }}
       transition={{
         duration: 0.5,
         delay,
@@ -35,28 +33,22 @@ export default function NetworkNode({
       }}
     >
       <motion.div
-        animate={{ y: [0, -4, 0] }}
+        whileHover={{
+          y: -4,
+          scale: 1.05,
+          transition: { duration: 0.2 },
+        }}
+        animate={{ y: [0, -3, 0] }}
         transition={{
-          duration: 3 + delay,
+          duration: 4 + delay * 2,
           repeat: Infinity,
           ease: "easeInOut",
         }}
-        whileHover={{
-          scale: 1.2,
-          transition: { duration: 0.2 },
-        }}
-        className={cn(
-          "group relative flex h-12 w-12 cursor-pointer items-center justify-center rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-lg transition-all duration-300 hover:border-white/20 hover:bg-white/[0.06] hover:shadow-lg sm:h-14 sm:w-14",
-        )}
+        className="flex h-12 w-12 cursor-pointer items-center justify-center rounded-2xl border border-gray-100 bg-white shadow-md shadow-gray-200/50 transition-all duration-300 hover:shadow-lg hover:shadow-blue-100/50 sm:h-14 sm:w-14"
       >
-        {/* Glow ring */}
-        <div
-          className="absolute inset-0 rounded-full opacity-0 blur-md transition-opacity duration-300 group-hover:opacity-60"
-          style={{ backgroundColor: `${accent}20` }}
-        />
-        <Icon className="relative h-5 w-5 sm:h-6 sm:w-6" style={{ color: accent }} />
+        <Icon className="h-5 w-5 text-[#2563EB] sm:h-6 sm:w-6" />
       </motion.div>
-      <span className="text-[10px] font-medium text-gray-500 sm:text-xs">
+      <span className="text-[9px] font-medium text-[#334155] sm:text-[10px]">
         {label}
       </span>
     </motion.div>
