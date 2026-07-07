@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { SOCIAL_LINKS } from "@/constants/footer";
 
 function SocialIcon({ icon }: { icon: string }) {
-  // Use simple SVG icons for social platforms since lucide doesn't include brand icons
   const paths: Record<string, string> = {
     Facebook: "M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z",
     Linkedin: "M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4z",
@@ -44,7 +43,7 @@ export default function SocialLinks() {
           aria-label={link.label}
           whileHover={{ y: -2, scale: 1.1 }}
           transition={{ duration: 0.2 }}
-          className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/[0.06] bg-white/[0.03] text-gray-500 transition-all duration-300 hover:border-white/[0.15] hover:bg-white/[0.06] hover:text-white"
+          className="flex h-9 w-9 items-center justify-center rounded-xl border border-gray-200 bg-white text-[#64748B] shadow-sm transition-all duration-300 hover:border-gray-300 hover:shadow-md hover:text-[#0F172A]"
         >
           <SocialIcon icon={link.icon} />
         </motion.a>

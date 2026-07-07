@@ -15,52 +15,46 @@ export interface SolutionCardProps {
 
 const accentStyles = {
   pink: {
-    border: "border-pink-200/80 hover:border-pink-400",
-    iconBg: "bg-pink-50",
-    iconColor: "text-pink-500",
-    glow: "group-hover:shadow-pink-200/50",
-    ctaGradient: "from-pink-500 to-rose-500",
-    glowBg: "bg-pink-400/10",
+    border: "border-[#E5E7EB] hover:border-[#1F4E8C]/30",
+    iconBg: "bg-[#EEF4FF]",
+    iconColor: "text-[#1F4E8C]",
+    glow: "group-hover:shadow-[#1F4E8C]/8",
+    glowBg: "bg-[#1F4E8C]/5",
   },
   orange: {
-    border: "border-orange-200/80 hover:border-orange-400",
-    iconBg: "bg-orange-50",
-    iconColor: "text-orange-500",
-    glow: "group-hover:shadow-orange-200/50",
-    ctaGradient: "from-orange-500 to-amber-500",
-    glowBg: "bg-orange-400/10",
+    border: "border-[#E5E7EB] hover:border-[#1F4E8C]/30",
+    iconBg: "bg-blue-50",
+    iconColor: "text-[#1F4E8C]",
+    glow: "group-hover:shadow-[#1F4E8C]/8",
+    glowBg: "bg-[#1F4E8C]/5",
   },
   green: {
-    border: "border-emerald-200/80 hover:border-emerald-500",
+    border: "border-[#E5E7EB] hover:border-emerald-300",
     iconBg: "bg-emerald-50",
-    iconColor: "text-emerald-500",
-    glow: "group-hover:shadow-emerald-200/50",
-    ctaGradient: "from-emerald-500 to-teal-500",
-    glowBg: "bg-emerald-400/10",
+    iconColor: "text-emerald-600",
+    glow: "group-hover:shadow-emerald-100/50",
+    glowBg: "bg-emerald-400/5",
   },
   blue: {
-    border: "border-blue-200/80 hover:border-blue-500",
-    iconBg: "bg-blue-50",
-    iconColor: "text-blue-500",
-    glow: "group-hover:shadow-blue-200/50",
-    ctaGradient: "from-blue-500 to-indigo-500",
-    glowBg: "bg-blue-400/10",
+    border: "border-[#E5E7EB] hover:border-[#1F4E8C]/30",
+    iconBg: "bg-[#EEF4FF]",
+    iconColor: "text-[#1F4E8C]",
+    glow: "group-hover:shadow-[#1F4E8C]/8",
+    glowBg: "bg-[#1F4E8C]/5",
   },
   purple: {
-    border: "border-purple-200/80 hover:border-purple-500",
+    border: "border-[#E5E7EB] hover:border-[#8A6FA8]/40",
     iconBg: "bg-purple-50",
-    iconColor: "text-purple-500",
-    glow: "group-hover:shadow-purple-200/50",
-    ctaGradient: "from-purple-500 to-violet-500",
-    glowBg: "bg-purple-400/10",
+    iconColor: "text-[#8A6FA8]",
+    glow: "group-hover:shadow-purple-100/50",
+    glowBg: "bg-purple-400/5",
   },
   cyan: {
-    border: "border-cyan-200/80 hover:border-cyan-500",
+    border: "border-[#E5E7EB] hover:border-cyan-300",
     iconBg: "bg-cyan-50",
-    iconColor: "text-cyan-500",
-    glow: "group-hover:shadow-cyan-200/50",
-    ctaGradient: "from-cyan-500 to-sky-500",
-    glowBg: "bg-cyan-400/10",
+    iconColor: "text-cyan-600",
+    glow: "group-hover:shadow-cyan-100/50",
+    glowBg: "bg-cyan-400/5",
   },
 };
 
@@ -85,15 +79,15 @@ export default function SolutionCard({
         ease: [0.25, 0.46, 0.45, 0.94],
       }}
       whileHover={{
-        y: -10,
-        scale: 1.02,
+        y: -8,
+        scale: 1.01,
         transition: { duration: 0.4, ease: "easeOut" },
       }}
       className={cn(
-        "group relative flex h-[440px] cursor-pointer flex-col overflow-hidden rounded-[32px] border bg-white/90 p-10 shadow-lg backdrop-blur-sm transition-all duration-500",
+        "group relative flex h-[440px] cursor-pointer flex-col overflow-hidden rounded-2xl border bg-white p-10 shadow-sm transition-all duration-500",
         styles.border,
         styles.glow,
-        "hover:shadow-2xl"
+        "hover:shadow-xl"
       )}
     >
       {/* Subtle glow behind card on hover */}
@@ -107,41 +101,29 @@ export default function SolutionCard({
       {/* Icon Container */}
       <div
         className={cn(
-          "relative mb-6 flex h-20 w-20 items-center justify-center rounded-3xl transition-transform duration-500 group-hover:scale-110",
+          "relative mb-6 flex h-16 w-16 items-center justify-center rounded-2xl transition-transform duration-500 group-hover:scale-110",
           styles.iconBg
         )}
       >
-        {/* Icon glow */}
-        <div
-          className={cn(
-            "absolute inset-0 rounded-3xl opacity-0 blur-md transition-opacity duration-500 group-hover:opacity-40",
-            styles.glowBg
-          )}
-        />
-        <Icon className={cn("relative h-[34px] w-[34px]", styles.iconColor)} />
+        <Icon className={cn("relative h-7 w-7", styles.iconColor)} />
       </div>
 
       {/* Title */}
-      <h3 className="mb-3 text-2xl font-bold leading-tight text-[#111827] sm:text-[28px] lg:text-[32px]">
+      <h3 className="mb-3 text-xl font-bold leading-tight text-[#0F172A] sm:text-2xl">
         {title}
       </h3>
 
       {/* Description */}
-      <p className="mb-auto text-base leading-relaxed text-gray-500 lg:text-lg">
+      <p className="mb-auto text-sm leading-relaxed text-[#6B7280] lg:text-base">
         {description}
       </p>
 
       {/* CTA */}
       <div className="mt-6 flex items-center gap-1.5">
-        <span
-          className={cn(
-            "bg-gradient-to-r bg-clip-text text-sm font-semibold text-transparent",
-            styles.ctaGradient
-          )}
-        >
+        <span className="text-sm font-semibold text-[#1F4E8C]">
           {cta}
         </span>
-        <motion.svg
+        <svg
           xmlns="http://www.w3.org/2000/svg"
           width="16"
           height="16"
@@ -151,11 +133,11 @@ export default function SolutionCard({
           strokeWidth="2.5"
           strokeLinecap="round"
           strokeLinejoin="round"
-          className={cn("transition-transform duration-300 group-hover:translate-x-1.5", styles.iconColor)}
+          className="text-[#1F4E8C] transition-transform duration-300 group-hover:translate-x-1.5"
         >
           <path d="M5 12h14" />
           <path d="m12 5 7 7-7 7" />
-        </motion.svg>
+        </svg>
       </div>
     </motion.div>
   );

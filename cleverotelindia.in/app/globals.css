@@ -2,12 +2,17 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #111827;
-  --primary: #5B5CF6;
-  --secondary: #D946EF;
-  --dark-blue: #1E3A8A;
-  --text-color: #111827;
-  --gray: #6B7280;
+  --foreground: #0F172A;
+  --primary: #1F4E8C;
+  --primary-hover: #163D70;
+  --secondary: #8A6FA8;
+  --dark-navy: #0F172A;
+  --text-color: #0F172A;
+  --text-body: #6B7280;
+  --border: #E5E7EB;
+  --badge-bg: #EEF4FF;
+  --badge-border: #C7D8F5;
+  --badge-text: #1F4E8C;
 }
 
 @theme inline {
@@ -38,8 +43,8 @@ body {
 
 /* Selection color */
 ::selection {
-  background: rgba(91, 92, 246, 0.15);
-  color: #111827;
+  background: rgba(31, 78, 140, 0.12);
+  color: #0F172A;
 }
 
 /* Scrollbar styling */

@@ -20,7 +20,7 @@ const solutions: Omit<SolutionCardProps, "index">[] = [
     description:
       "Enterprise-grade cloud telephony with IVR, extensions, voicemail, call forwarding, recording, analytics, and remote workforce support.",
     cta: "Explore Cloud PBX",
-    accent: "pink",
+    accent: "blue",
   },
   {
     icon: Headphones,
@@ -28,7 +28,7 @@ const solutions: Omit<SolutionCardProps, "index">[] = [
     description:
       "Inbound, outbound, predictive dialing, agent monitoring, queue management, AI-powered routing, and real-time analytics.",
     cta: "Explore Call Center",
-    accent: "orange",
+    accent: "blue",
   },
   {
     icon: MessageCircle,
@@ -44,7 +44,7 @@ const solutions: Omit<SolutionCardProps, "index">[] = [
     description:
       "Purchase local and international virtual numbers across multiple countries with instant activation and global coverage.",
     cta: "Explore Numbers",
-    accent: "blue",
+    accent: "cyan",
   },
   {
     icon: Bot,
@@ -60,29 +60,17 @@ const solutions: Omit<SolutionCardProps, "index">[] = [
     description:
       "Connect seamlessly with Salesforce, HubSpot, Zoho CRM, Microsoft Teams, Slack, Google Workspace, and REST APIs.",
     cta: "Explore Integrations",
-    accent: "cyan",
+    accent: "blue",
   },
 ];
 
 export default function SolutionSection() {
   return (
     <section className="relative overflow-hidden bg-white py-16 px-5 sm:py-20 sm:px-6 lg:py-28 lg:px-6">
-      {/* Background effects */}
+      {/* Background effects - subtle blue tones */}
       <div className="pointer-events-none absolute inset-0">
-        {/* Radial gradient */}
-        <div className="absolute left-1/2 top-0 h-[800px] w-[800px] -translate-x-1/2 -translate-y-1/3 rounded-full bg-gradient-to-br from-purple-50/60 via-pink-50/40 to-transparent blur-[80px]" />
-        <div className="absolute bottom-0 right-0 h-[500px] w-[500px] translate-x-1/4 translate-y-1/4 rounded-full bg-gradient-to-tl from-blue-50/50 via-cyan-50/30 to-transparent blur-[60px]" />
-        {/* Floating blurred circles */}
-        <motion.div
-          className="absolute left-[10%] top-[20%] h-32 w-32 rounded-full bg-pink-100/30 blur-[50px]"
-          animate={{ y: [0, -20, 0], scale: [1, 1.1, 1] }}
-          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-        />
-        <motion.div
-          className="absolute right-[15%] top-[60%] h-24 w-24 rounded-full bg-indigo-100/30 blur-[40px]"
-          animate={{ y: [0, 15, 0], scale: [1, 0.95, 1] }}
-          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-        />
+        <div className="absolute left-1/2 top-0 h-[800px] w-[800px] -translate-x-1/2 -translate-y-1/3 rounded-full bg-[#EEF4FF]/60 blur-[80px]" />
+        <div className="absolute bottom-0 right-0 h-[500px] w-[500px] translate-x-1/4 translate-y-1/4 rounded-full bg-blue-50/40 blur-[60px]" />
         {/* Subtle dot grid */}
         <svg className="absolute inset-0 h-full w-full opacity-[0.02]" xmlns="http://www.w3.org/2000/svg">
           <defs>

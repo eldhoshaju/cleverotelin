@@ -15,7 +15,7 @@ export default function SectionHeader({
   gradientWord,
   subtitle,
 }: SectionHeaderProps) {
-  // Split heading around the gradient word
+  // Split heading around the highlighted word
   const parts = heading.split(gradientWord);
   const before = parts[0] || "";
   const after = parts[1] || "";
@@ -28,11 +28,9 @@ export default function SectionHeader({
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-50px" }}
         transition={{ duration: 0.5 }}
-        className="mb-5 inline-flex rounded-full border border-purple-200/60 bg-purple-50/80 px-4 py-1.5 text-sm font-medium"
+        className="mb-5 inline-flex rounded-full border border-[#C7D8F5] bg-[#EEF4FF] px-4 py-1.5 text-sm font-medium text-[#1F4E8C]"
       >
-        <span className="bg-gradient-to-r from-[#7C3AED] to-[#6366F1] bg-clip-text text-transparent">
-          {badge}
-        </span>
+        {badge}
       </motion.span>
 
       {/* Heading */}
@@ -41,10 +39,10 @@ export default function SectionHeader({
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-50px" }}
         transition={{ duration: 0.6, delay: 0.1 }}
-        className="mb-6 text-[34px] font-extrabold leading-tight tracking-tight text-[#111827] sm:text-[48px] lg:text-[64px]"
+        className="mb-6 text-[34px] font-extrabold leading-tight tracking-tight text-[#0F172A] sm:text-[48px] lg:text-[64px]"
       >
         {before}
-        <span className="bg-gradient-to-r from-[#EC4899] to-[#6366F1] bg-clip-text text-transparent">
+        <span className="text-[#1F4E8C]">
           {gradientWord}
         </span>
         {after}
@@ -56,7 +54,7 @@ export default function SectionHeader({
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-50px" }}
         transition={{ duration: 0.6, delay: 0.2 }}
-        className="max-w-[700px] text-base leading-relaxed text-gray-600 md:text-lg"
+        className="max-w-[700px] text-base leading-relaxed text-[#6B7280] md:text-lg"
       >
         {subtitle}
       </motion.p>

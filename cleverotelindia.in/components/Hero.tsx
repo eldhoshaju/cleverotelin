@@ -23,7 +23,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="mb-6 rounded-full border border-[#5B5CF6]/20 bg-[#5B5CF6]/5 px-4 py-1.5 text-sm font-medium text-[#5B5CF6]"
+          className="mb-6 rounded-full border border-[#C7D8F5] bg-[#EEF4FF] px-4 py-1.5 text-sm font-medium text-[#1F4E8C]"
         >
           Trusted by 4,000+ businesses across India
         </motion.div>
@@ -37,10 +37,10 @@ export default function Hero() {
             delay: 0.2,
             ease: [0.25, 0.46, 0.45, 0.94],
           }}
-          className="mb-6 max-w-4xl text-center text-4xl font-bold leading-tight tracking-tight text-[#111827] sm:text-5xl md:text-6xl lg:text-[64px] lg:leading-[1.1]"
+          className="mb-6 max-w-4xl text-center text-4xl font-bold leading-tight tracking-tight text-[#0F172A] sm:text-5xl md:text-6xl lg:text-[64px] lg:leading-[1.1]"
         >
           Transform Your{" "}
-          <span className="bg-gradient-to-r from-[#5B5CF6] via-[#7C3AED] to-[#D946EF] bg-clip-text text-transparent">
+          <span className="text-[#1F4E8C]">
             Business Communication
           </span>
         </motion.h1>
