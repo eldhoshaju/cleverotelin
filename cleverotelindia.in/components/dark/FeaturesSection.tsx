@@ -1,25 +1,25 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Ticket, TrendingUp, Workflow } from "lucide-react";
+import { Headphones, BellRing, Workflow } from "lucide-react";
 import FeatureCard from "./FeatureCard";
 import type { FeatureCardProps } from "./FeatureCard";
 
 const features: Omit<FeatureCardProps, "index">[] = [
   {
-    icon: Ticket,
-    title: "Ticket Management",
+    icon: Headphones,
+    title: "Contact Center Solution",
     description:
-      "Manage customer tickets with automation, SLA tracking, assignments and reporting.",
-    cta: "Explore Ticketing →",
+      "Deliver seamless inbound and outbound customer interactions with intelligent routing, omnichannel support, analytics, and real-time reporting.",
+    cta: "Explore Contact Center →",
     accent: "cyan",
   },
   {
-    icon: TrendingUp,
-    title: "Lead Management",
+    icon: BellRing,
+    title: "Virtual Reception",
     description:
-      "Capture and manage leads with CRM integration and automated workflows.",
-    cta: "Explore Leads →",
+      "Provide a professional first impression with AI-powered call answering, smart call routing, IVR menus, voicemail, and business-hour automation.",
+    cta: "Explore Virtual Reception →",
     accent: "amber",
   },
   {

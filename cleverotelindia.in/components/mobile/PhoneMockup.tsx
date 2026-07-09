@@ -14,71 +14,69 @@ import {
   Users,
 } from "lucide-react";
 
-interface PhoneScreenProps {
-  variant: "calls" | "contacts" | "analytics" | "chat";
-  className?: string;
-  rotation?: number;
-  delay?: number;
-  zIndex?: number;
-}
-
 function CallsScreen() {
   const calls = [
-    { name: "Sarah Johnson", time: "2 min ago", type: "incoming", icon: PhoneIncoming, color: "text-emerald-500" },
-    { name: "David Miller", time: "15 min ago", type: "outgoing", icon: PhoneOutgoing, color: "text-blue-500" },
-    { name: "Emily Chen", time: "1 hr ago", type: "missed", icon: PhoneMissed, color: "text-red-500" },
-    { name: "James Wilson", time: "2 hrs ago", type: "voicemail", icon: Voicemail, color: "text-purple-500" },
-    { name: "Lisa Park", time: "3 hrs ago", type: "incoming", icon: PhoneIncoming, color: "text-emerald-500" },
+    { name: "Sarah Johnson", time: "2 min ago", type: "incoming", icon: PhoneIncoming, color: "text-emerald-400" },
+    { name: "David Miller", time: "15 min ago", type: "outgoing", icon: PhoneOutgoing, color: "text-blue-400" },
+    { name: "Emily Chen", time: "1 hr ago", type: "missed", icon: PhoneMissed, color: "text-red-400" },
+    { name: "James Wilson", time: "2 hrs ago", type: "voicemail", icon: Voicemail, color: "text-purple-400" },
+    { name: "Lisa Park", time: "3 hrs ago", type: "incoming", icon: PhoneIncoming, color: "text-emerald-400" },
   ];
 
   return (
-    <div className="flex h-full flex-col bg-white">
+    <div className="relative flex h-full flex-col bg-[#1b4175]">
+      {/* Watermark logo background */}
+      <div
+        className="pointer-events-none absolute inset-0 bg-center bg-no-repeat bg-contain opacity-[0.10]"
+        style={{ backgroundImage: "url('/cleverotel%20app_phone%20background.png')" }}
+      />
+
       {/* Status bar */}
-      <div className="flex items-center justify-between px-4 pt-3 pb-2">
-        <span className="text-[9px] font-semibold text-gray-800">9:41</span>
+      <div className="relative flex items-center justify-between px-4 pt-3 pb-2">
+        <span className="text-[9px] font-semibold text-white">9:41</span>
         <div className="flex gap-1">
-          <div className="h-1.5 w-3 rounded-sm bg-gray-800" />
-          <div className="h-1.5 w-1.5 rounded-full bg-gray-800" />
+          <div className="h-1.5 w-3 rounded-sm bg-white" />
+          <div className="h-1.5 w-1.5 rounded-full bg-white" />
         </div>
       </div>
 
       {/* Header */}
-      <div className="border-b border-gray-100 px-4 pb-3">
-        <h3 className="text-sm font-bold text-gray-900">Recent Calls</h3>
-        <p className="text-[9px] text-gray-500">Today</p>
+      <div className="relative border-b border-white/10 px-4 pb-3">
+        <h3 className="text-sm font-bold text-white">Recent Calls</h3>
+        <p className="text-[9px] text-white/60">Today</p>
       </div>
 
       {/* Call list */}
-      <div className="flex-1 overflow-hidden px-3 py-2">
+      <div className="relative flex-1 overflow-hidden px-3 py-2">
         {calls.map((call, i) => {
           const Icon = call.icon;
           return (
-            <div key={i} className="flex items-center gap-2.5 rounded-xl px-2 py-2 transition-colors hover:bg-gray-50">
-              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gray-100">
-                <User className="h-3.5 w-3.5 text-gray-500" />
+            <div key={i} className="flex items-center gap-2.5 rounded-xl px-2 py-2 transition-colors hover:bg-white/5">
+              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-white/10">
+                <User className="h-3.5 w-3.5 text-white/70" />
               </div>
               <div className="flex-1">
-                <p className="text-[10px] font-semibold text-gray-800">{call.name}</p>
+                <p className="text-[10px] font-semibold text-white">{call.name}</p>
                 <div className="flex items-center gap-1">
                   <Icon className={`h-2.5 w-2.5 ${call.color}`} />
-                  <span className="text-[8px] text-gray-400">{call.time}</span>
+                  <span className="text-[8px] text-white/50">{call.time}</span>
                 </div>
               </div>
-              <Phone className="h-3.5 w-3.5 text-emerald-500" />
+              <Phone className="h-3.5 w-3.5 text-emerald-400" />
             </div>
           );
         })}
       </div>
 
       {/* Bottom nav */}
-      <div className="flex items-center justify-around border-t border-gray-100 px-4 py-2">
-        <Clock className="h-4 w-4 text-[#7C3AED]" />
-        <Users className="h-4 w-4 text-gray-400" />
-        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-r from-[#EC4899] to-[#7C3AED]">
+      <div className="relative flex items-center justify-around border-t border-white/10 px-4 py-2">
+        <Clock className="h-4 w-4 text-white" />
+        <Users className="h-4 w-4 text-white/50" />
+        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#1F4E8C]">
           <Phone className="h-3.5 w-3.5 text-white" />
         </div>
-        <MessageSquare className="h-4 w-4 text-gray-400" />
-        <BarChart3 className="h-4 w-4 text-gray-400" />
+        <MessageSquare className="h-4 w-4 text-white/50" />
+        <BarChart3 className="h-4 w-4 text-white/50" />
       </div>
     </div>
   );
@@ -94,38 +92,44 @@ function ContactsScreen() {
   ];
 
   return (
-    <div className="flex h-full flex-col bg-white">
-      <div className="flex items-center justify-between px-4 pt-3 pb-2">
-        <span className="text-[9px] font-semibold text-gray-800">9:41</span>
+    <div className="relative flex h-full flex-col bg-[#1b4175]">
+      {/* Watermark logo background */}
+      <div
+        className="pointer-events-none absolute inset-0 bg-center bg-no-repeat bg-contain opacity-[0.10]"
+        style={{ backgroundImage: "url('/cleverotel%20app_phone%20background.png')" }}
+      />
+
+      <div className="relative flex items-center justify-between px-4 pt-3 pb-2">
+        <span className="text-[9px] font-semibold text-white">9:41</span>
         <div className="flex gap-1">
-          <div className="h-1.5 w-3 rounded-sm bg-gray-800" />
-          <div className="h-1.5 w-1.5 rounded-full bg-gray-800" />
+          <div className="h-1.5 w-3 rounded-sm bg-white" />
+          <div className="h-1.5 w-1.5 rounded-full bg-white" />
         </div>
       </div>
 
-      <div className="border-b border-gray-100 px-4 pb-3">
-        <h3 className="text-sm font-bold text-gray-900">Contacts</h3>
-        <div className="mt-2 flex items-center gap-2 rounded-lg bg-gray-50 px-3 py-1.5">
-          <span className="text-[9px] text-gray-400">Search contacts...</span>
+      <div className="relative border-b border-white/10 px-4 pb-3">
+        <h3 className="text-sm font-bold text-white">Contacts</h3>
+        <div className="mt-2 flex items-center gap-2 rounded-lg bg-white/10 px-3 py-1.5">
+          <span className="text-[9px] text-white/50">Search contacts...</span>
         </div>
       </div>
 
-      <div className="flex-1 overflow-hidden px-3 py-2">
+      <div className="relative flex-1 overflow-hidden px-3 py-2">
         {contacts.map((contact, i) => (
           <div key={i} className="flex items-center gap-2.5 rounded-xl px-2 py-2">
             <div className="relative">
-              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-purple-100 to-pink-100">
-                <span className="text-[9px] font-bold text-purple-600">{contact.name[0]}</span>
+              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-white/15">
+                <span className="text-[9px] font-bold text-white">{contact.name[0]}</span>
               </div>
-              <div className={`absolute bottom-0 right-0 h-2 w-2 rounded-full border border-white ${
-                contact.status === "online" ? "bg-emerald-400" : contact.status === "busy" ? "bg-amber-400" : "bg-gray-300"
+              <div className={`absolute bottom-0 right-0 h-2 w-2 rounded-full border border-[#1b4175] ${
+                contact.status === "online" ? "bg-emerald-400" : contact.status === "busy" ? "bg-amber-400" : "bg-gray-400"
               }`} />
             </div>
             <div className="flex-1">
-              <p className="text-[10px] font-semibold text-gray-800">{contact.name}</p>
-              <p className="text-[8px] text-gray-400">{contact.dept}</p>
+              <p className="text-[10px] font-semibold text-white">{contact.name}</p>
+              <p className="text-[8px] text-white/50">{contact.dept}</p>
             </div>
-            <Phone className="h-3 w-3 text-gray-400" />
+            <Phone className="h-3 w-3 text-white/40" />
           </div>
         ))}
       </div>
@@ -135,60 +139,66 @@ function ContactsScreen() {
 
 function AnalyticsScreen() {
   return (
-    <div className="flex h-full flex-col bg-white">
-      <div className="flex items-center justify-between px-4 pt-3 pb-2">
-        <span className="text-[9px] font-semibold text-gray-800">9:41</span>
+    <div className="relative flex h-full flex-col bg-[#1b4175]">
+      {/* Watermark logo background */}
+      <div
+        className="pointer-events-none absolute inset-0 bg-center bg-no-repeat bg-contain opacity-[0.10]"
+        style={{ backgroundImage: "url('/cleverotel%20app_phone%20background.png')" }}
+      />
+
+      <div className="relative flex items-center justify-between px-4 pt-3 pb-2">
+        <span className="text-[9px] font-semibold text-white">9:41</span>
         <div className="flex gap-1">
-          <div className="h-1.5 w-3 rounded-sm bg-gray-800" />
-          <div className="h-1.5 w-1.5 rounded-full bg-gray-800" />
+          <div className="h-1.5 w-3 rounded-sm bg-white" />
+          <div className="h-1.5 w-1.5 rounded-full bg-white" />
         </div>
       </div>
 
-      <div className="border-b border-gray-100 px-4 pb-3">
-        <h3 className="text-sm font-bold text-gray-900">Dashboard</h3>
-        <p className="text-[9px] text-gray-500">Today&apos;s performance</p>
+      <div className="relative border-b border-white/10 px-4 pb-3">
+        <h3 className="text-sm font-bold text-white">Dashboard</h3>
+        <p className="text-[9px] text-white/60">Today&apos;s performance</p>
       </div>
 
-      <div className="flex-1 overflow-hidden p-3">
+      <div className="relative flex-1 overflow-hidden p-3">
         {/* KPI cards */}
         <div className="mb-3 grid grid-cols-2 gap-2">
-          <div className="rounded-xl bg-gradient-to-br from-purple-50 to-pink-50 p-2.5">
-            <p className="text-[8px] text-gray-500">Total Calls</p>
-            <p className="text-sm font-bold text-gray-900">248</p>
-            <p className="text-[7px] font-medium text-emerald-500">+12%</p>
+          <div className="rounded-xl bg-white/10 p-2.5">
+            <p className="text-[8px] text-white/60">Total Calls</p>
+            <p className="text-sm font-bold text-white">248</p>
+            <p className="text-[7px] font-medium text-emerald-400">+12%</p>
           </div>
-          <div className="rounded-xl bg-gradient-to-br from-blue-50 to-cyan-50 p-2.5">
-            <p className="text-[8px] text-gray-500">Avg Duration</p>
-            <p className="text-sm font-bold text-gray-900">4:32</p>
-            <p className="text-[7px] font-medium text-emerald-500">+5%</p>
+          <div className="rounded-xl bg-white/10 p-2.5">
+            <p className="text-[8px] text-white/60">Avg Duration</p>
+            <p className="text-sm font-bold text-white">4:32</p>
+            <p className="text-[7px] font-medium text-emerald-400">+5%</p>
           </div>
         </div>
 
         {/* Mini chart */}
-        <div className="rounded-xl border border-gray-100 p-2.5">
-          <p className="mb-2 text-[8px] font-semibold text-gray-600">Call Volume</p>
+        <div className="rounded-xl border border-white/10 p-2.5">
+          <p className="mb-2 text-[8px] font-semibold text-white/70">Call Volume</p>
           <div className="flex h-12 items-end gap-1">
             {[40, 65, 45, 80, 55, 70, 90, 60, 75, 85].map((h, i) => (
-              <div key={i} className="flex-1 rounded-t-sm bg-gradient-to-t from-[#7C3AED] to-[#EC4899]" style={{ height: `${h}%` }} />
+              <div key={i} className="flex-1 rounded-t-sm bg-gradient-to-t from-[#1F4E8C] to-[#60A5FA]" style={{ height: `${h}%` }} />
             ))}
           </div>
         </div>
 
         {/* Status */}
-        <div className="mt-3 rounded-xl border border-gray-100 p-2.5">
-          <p className="mb-1.5 text-[8px] font-semibold text-gray-600">Agent Status</p>
+        <div className="mt-3 rounded-xl border border-white/10 p-2.5">
+          <p className="mb-1.5 text-[8px] font-semibold text-white/70">Agent Status</p>
           <div className="flex items-center gap-2">
             <div className="flex items-center gap-1">
               <div className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-              <span className="text-[7px] text-gray-500">Online 8</span>
+              <span className="text-[7px] text-white/60">Online 8</span>
             </div>
             <div className="flex items-center gap-1">
               <div className="h-1.5 w-1.5 rounded-full bg-amber-400" />
-              <span className="text-[7px] text-gray-500">Busy 3</span>
+              <span className="text-[7px] text-white/60">Busy 3</span>
             </div>
             <div className="flex items-center gap-1">
-              <div className="h-1.5 w-1.5 rounded-full bg-gray-300" />
-              <span className="text-[7px] text-gray-500">Off 2</span>
+              <div className="h-1.5 w-1.5 rounded-full bg-gray-400" />
+              <span className="text-[7px] text-white/60">Off 2</span>
             </div>
           </div>
         </div>
@@ -206,43 +216,49 @@ function ChatScreen() {
   ];
 
   return (
-    <div className="flex h-full flex-col bg-white">
-      <div className="flex items-center justify-between px-4 pt-3 pb-2">
-        <span className="text-[9px] font-semibold text-gray-800">9:41</span>
+    <div className="relative flex h-full flex-col bg-[#1b4175]">
+      {/* Watermark logo background */}
+      <div
+        className="pointer-events-none absolute inset-0 bg-center bg-no-repeat bg-contain opacity-[0.10]"
+        style={{ backgroundImage: "url('/cleverotel%20app_phone%20background.png')" }}
+      />
+
+      <div className="relative flex items-center justify-between px-4 pt-3 pb-2">
+        <span className="text-[9px] font-semibold text-white">9:41</span>
         <div className="flex gap-1">
-          <div className="h-1.5 w-3 rounded-sm bg-gray-800" />
-          <div className="h-1.5 w-1.5 rounded-full bg-gray-800" />
+          <div className="h-1.5 w-3 rounded-sm bg-white" />
+          <div className="h-1.5 w-1.5 rounded-full bg-white" />
         </div>
       </div>
 
-      <div className="flex items-center gap-2 border-b border-gray-100 px-4 pb-3">
-        <div className="flex h-7 w-7 items-center justify-center rounded-full bg-gradient-to-br from-[#EC4899] to-[#7C3AED]">
+      <div className="relative flex items-center gap-2 border-b border-white/10 px-4 pb-3">
+        <div className="flex h-7 w-7 items-center justify-center rounded-full bg-[#1F4E8C]">
           <MessageSquare className="h-3 w-3 text-white" />
         </div>
         <div>
-          <p className="text-[10px] font-bold text-gray-900">Team Chat</p>
-          <p className="text-[8px] text-emerald-500">Online</p>
+          <p className="text-[10px] font-bold text-white">Team Chat</p>
+          <p className="text-[8px] text-emerald-400">Online</p>
         </div>
       </div>
 
-      <div className="flex-1 overflow-hidden px-3 py-2">
+      <div className="relative flex-1 overflow-hidden px-3 py-2">
         {messages.map((msg, i) => (
           <div key={i} className={`mb-2 flex ${msg.from === "me" ? "justify-end" : "justify-start"}`}>
             <div className={`max-w-[75%] rounded-2xl px-2.5 py-1.5 ${
               msg.from === "me"
-                ? "bg-gradient-to-r from-[#7C3AED] to-[#6366F1] text-white"
-                : "bg-gray-100 text-gray-800"
+                ? "bg-[#1F4E8C] text-white"
+                : "bg-white/10 text-white"
             }`}>
               <p className="text-[8px] leading-relaxed">{msg.text}</p>
-              <p className={`mt-0.5 text-[6px] ${msg.from === "me" ? "text-white/60" : "text-gray-400"}`}>{msg.time}</p>
+              <p className={`mt-0.5 text-[6px] ${msg.from === "me" ? "text-white/60" : "text-white/40"}`}>{msg.time}</p>
             </div>
           </div>
         ))}
       </div>
 
-      <div className="border-t border-gray-100 px-3 py-2">
-        <div className="flex items-center gap-2 rounded-full bg-gray-50 px-3 py-1.5">
-          <span className="text-[8px] text-gray-400">Type a message...</span>
+      <div className="relative border-t border-white/10 px-3 py-2">
+        <div className="flex items-center gap-2 rounded-full bg-white/10 px-3 py-1.5">
+          <span className="text-[8px] text-white/40">Type a message...</span>
         </div>
       </div>
     </div>
@@ -331,7 +347,7 @@ export default function PhoneMockup() {
         viewport={{ once: true }}
         transition={{ duration: 0.5, delay: 0.9 }}
         animate={{ y: [0, -5, 0] }}
-        className="absolute -bottom-4 -right-8 z-20 hidden h-[160px] w-[140px] overflow-hidden rounded-2xl border border-white/50 bg-white/90 shadow-xl backdrop-blur-md sm:block"
+        className="absolute -bottom-4 -right-8 z-20 hidden h-[160px] w-[140px] overflow-hidden rounded-2xl border border-gray-700 bg-[#1b4175] shadow-xl sm:block"
         style={{ transform: "rotate(3deg)" }}
       >
         <ChatScreen />
